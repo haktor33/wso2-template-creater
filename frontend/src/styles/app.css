@@ -1,0 +1,22 @@
+.xml-viewer {
+    height: calc(100vh - 160px);
+    overflow-y: auto;
+}
+
+.draggable-list {
+    width: 100%;
+    height: calc(100vh - 160px);
+    background: #808080;
+}
+
+.dragg-item {
+    padding: 8px 8px 0px 8px;
+    cursor:pointer;
+}
+
+.sticky {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    border: 2px solid #000000;
+}
