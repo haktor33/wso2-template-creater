@@ -1,5 +1,5 @@
 index,name,description,parameters,code
-1,"pl_in","pl_in API çağrı kaydını loglama","OPER_NAME_VALUE,SOURCE_SYSTEMS_VALUE,TARGET_SYSTEMS_VALUE","<call-template target=""conf:templates/sequences/dbLogTemplate.xml"">
+1,"pl_in","pl_in gelen çağrı loglama","OPER_NAME_VALUE,SOURCE_SYSTEMS_VALUE,TARGET_SYSTEMS_VALUE","<call-template target=""conf:templates/sequences/dbLogTemplate.xml"">
     <with-param name=""GNL_EXT_SYST_CALL_LOG_ID"" value=""{get-property('seqSystemLogId')}"" xmlns:ns=""http://org.apache.synapse/xsd""/>
     <with-param name=""SRVC_NAME"" value=""{get-property('To')}"" xmlns:ns=""http://org.apache.synapse/xsd""/>
     <with-param name=""OPER_NAME"" value=""OPER_NAME_VALUE""/>
@@ -12,9 +12,15 @@ index,name,description,parameters,code
     <with-param name=""TARGET_SYSTEMS"" value=""TARGET_SYSTEMS_VALUE""/>
     <with-param name=""ACTION"" value=""pl_in""/>
 </call-template>"
-2,"pl_out","pl_out endpoint çağrısını loglama","INV_OUT_VALUE","<call-template target=""conf:templates/sequences/dbLogTemplate.xml"">
+2,"pl_out","pl_out giden çağrı loglama","INV_OUT_VALUE","<call-template target=""conf:templates/sequences/dbLogTemplate.xml"">
     <with-param name=""INV_OUT"" value=""{get-property('INV_OUT_VALUE')}"" xmlns:ns=""http://org.apache.synapse/xsd""/>
 	<with-param name=""GNL_EXT_SYST_CALL_LOG_ID"" value=""{get-property('seqSystemLogId')}"" xmlns:ns=""http://org.apache.synapse/xsd""/>
     <with-param name=""UUSER"" value=""WSO2ESB""/>
 	<with-param name=""ACTION"" value=""inv_out""/>
 </call-template>"
+3,endpoint,"End point çağrısı api çağrısı","URL","<call>
+        <endpoint key=""conf:URL""/>
+</call>"
+4,logLevel,"Loglama seviyesi ayarlama",LEVEL,"<log level=""LEVEL"">
+        <property expression=""get-property('uri.var.url')"" name=""text"" xmlns:ns=""http://org.apache.synapse/xsd""/>
+    </log>"

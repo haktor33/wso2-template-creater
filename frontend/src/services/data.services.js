@@ -31,3 +31,13 @@ export const getByIndex = async (index, params) => {
         return Promise.reject(err);
     }
 }
+
+export const reloadCodes = async () => {
+    var serviceName = `reload`;
+    try {
+        let response = await callApi(serviceName, {});
+        return response;
+    } catch (err) {
+        return Promise.reject(err);
+    }
+}
