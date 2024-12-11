@@ -24,3 +24,10 @@ index,name,description,parameters,code
 4,logLevel,"Loglama seviyesi ayarlama",LEVEL,"<log level=""LEVEL"">
         <property expression=""get-property('uri.var.url')"" name=""text"" xmlns:ns=""http://org.apache.synapse/xsd""/>
     </log>"
+5,switch,"switch case","expression,val1,val2","switch(expression) {
+  case val1:
+    break;
+  case val2:
+    break;
+  default:
+}"

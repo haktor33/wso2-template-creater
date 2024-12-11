@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Card, Col, Form, Input, Row, Button } from 'antd';
 import XMLViewer from 'react-xml-viewer'
 import { getByIndex } from "services/data.services";
+import CodePreview from '@uiw/react-code-preview';
 
 const CodeParameterEditor = (props) => {
 	const [state, setState] = useState({ predictedCode: {} });
@@ -33,6 +34,19 @@ const CodeParameterEditor = (props) => {
 		return formFields;
 	}
 
+	const getViewer = () => {
+		const { code } = state.predictedCode;
+		if (!code)
+			return null;
+		else if (!code.startsWith("<") && !code.endsWith(">")) {
+			const code2 = `12313123`;
+			return <pre>{code}</pre>
+		} else {
+			return <XMLViewer xml={state.predictedCode.code} />
+		}
+
+	}
+
 	return (
 		<Row gutter={[16, 16]}>
 			<Col md={24} lg={8} title={state.predictedCode.name}>
@@ -49,7 +63,7 @@ const CodeParameterEditor = (props) => {
 			</Col>
 			<Col md={24} lg={16}>
 				<Card size="small" hoverable title="Preview">
-					<XMLViewer xml={state.predictedCode.code} />
+					{getViewer()}
 				</Card>
 			</Col>
 		</Row>
