@@ -21,10 +21,84 @@ index,name,description,parameters,code
 3,endpoint,"End point çağrısı api çağrısı","URL","<call>
         <endpoint key=""conf:URL""/>
 </call>"
-4,logLevel,"Loglama seviyesi ayarlama",LEVEL,"<log level=""LEVEL"">
+4,logLevel,"Loglama seviyesi ayarlama","LEVEL","<log level=""LEVEL"">
         <property expression=""get-property('uri.var.url')"" name=""text"" xmlns:ns=""http://org.apache.synapse/xsd""/>
     </log>"
-5,switch,"switch case","expression,val1,val2","switch(expression) {
+5,forloop,"for döngüsü","index,count","for (int index = 0; index < count; index++) {
+  System.out.println(index);
+}"
+6,errorHandler,"Hata yönetimi loglama","ERROR_CODE, ERROR_MESSAGE","<call-template target=""conf:templates/sequences/errorHandlerTemplate.xml""> 
+    <with-param name=""ERROR_CODE"" value=""ERROR_CODE""/> 
+    <with-param name=""ERROR_MESSAGE"" value=""ERROR_MESSAGE""/> 
+</call-template>"
+7,authToken,"Harici sistem için token çağrısı","PROVIDER, REQUESTOR, OPER_NAME, AUTHENTICATE_TYPE, UUSER","<call-template target=""conf:templates/sequences/authTokenTemplate.xml""> 
+    <with-param name=""PROVIDER"" value=""PROVIDER""/> 
+    <with-param name=""REQUESTOR"" value=""REQUESTOR""/> 
+    <with-param name=""OPER_NAME"" value=""OPER_NAME""/> 
+    <with-param name=""AUTHENTICATE_TYPE"" value=""AUTHENTICATE_TYPE""/> 
+    <with-param name=""UUSER"" value=""UUSER""/> 
+</call-template>"
+8,retryLogic,"Çağrı tekrar deneme mekanizması","RETRY_COUNT, BACKOFF","<call-template target=""conf:templates/sequences/retryLogicTemplate.xml""> 
+    <with-param name=""RETRY_COUNT"" value=""RETRY_COUNT""/> 
+    <with-param name=""BACKOFF"" value=""BACKOFF""/> 
+</call-template>"
+9,auditLog,"Denetim loglama işlemi","AUDIT_TYPE, MESSAGE	","<call-template target=""conf:templates/sequences/auditLogTemplate.xml""> 
+    <with-param name=""AUDIT_TYPE"" value=""AUDIT_TYPE""/> 
+    <with-param name=""MESSAGE"" value=""MESSAGE""/> 
+</call-template>"
+10,validate,"Veri doğrulama işlemi","INPUT_SCHEMA, DATA","<call-template target=""conf:templates/sequences/validateTemplate.xml""> 
+    <with-param name=""INPUT_SCHEMA"" value=""INPUT_SCHEMA""/> 
+    <with-param name=""DATA"" value=""DATA""/> 
+</call-template>"
+11,apiCall,"API çağrısı yönetimi","API_NAME, REQUEST_PAYLOAD, RESPONSE_PAYLOAD","<call-template target=""conf:templates/sequences/apiCallTemplate.xml""> 
+    <with-param name=""API_NAME"" value=""API_NAME""/> 
+    <with-param name=""REQUEST_PAYLOAD"" value=""REQUEST_PAYLOAD""/> 
+    <with-param name=""RESPONSE_PAYLOAD"" value=""RESPONSE_PAYLOAD""/> 
+</call-template>"
+12,dbTransaction,"Veritabanı işlemi yönetimi","TRANSACTION_ID, ACTION_TYPE","<call-template target=""conf:templates/sequences/dbTransactionTemplate.xml""> 
+    <with-param name=""TRANSACTION_ID"" value=""TRANSACTION_ID""/> 
+    <with-param name=""ACTION_TYPE"" value=""ACTION_TYPE""/> 
+</call-template>"
+13,dataCache,"Veri önbelleği yönetimi","CACHE_KEY, CACHE_TTL","<call-template target=""conf:templates/sequences/dataCacheTemplate.xml""> 
+    <with-param name=""CACHE_KEY"" value=""CACHE_KEY""/> 
+    <with-param name=""CACHE_TTL"" value=""CACHE_TTL""/> 
+</call-template>"
+14,userAuth,"Kullanıcı kimlik doğrulama","USER_ID, PASSWORD, ROLE","<call-template target=""conf:templates/sequences/userAuthTemplate.xml""> 
+    <with-param name=""USER_ID"" value=""USER_ID""/> 
+    <with-param name=""PASSWORD"" value=""PASSWORD""/> 
+    <with-param name=""ROLE"" value=""ROLE""/> 
+</call-template>"
+15,emailSend,"E-posta gönderimi","EMAIL_TO, EMAIL_SUBJECT, EMAIL_BODY","<call-template target=""conf:templates/sequences/emailSendTemplate.xml""> 
+    <with-param name=""EMAIL_TO"" value=""EMAIL_TO""/> 
+    <with-param name=""EMAIL_SUBJECT"" value=""EMAIL_SUBJECT""/> 
+    <with-param name=""EMAIL_BODY"" value=""EMAIL_BODY""/> 
+</call-template>"
+16,dataExport,"Veri dışa aktarım işlemi","EXPORT_FORMAT, EXPORT_PATH","<call-template target=""conf:templates/sequences/dataExportTemplate.xml""> 
+    <with-param name=""EXPORT_FORMAT"" value=""EXPORT_FORMAT""/> 
+    <with-param name=""EXPORT_PATH"" value=""EXPORT_PATH""/> 
+</call-template>"
+17,logRotate,"Log döngüsü yönetimi","LOG_FILE, ROTATE_SIZE, RETENTION_PERIOD","<call-template target=""conf:templates/sequences/logRotateTemplate.xml""> 
+    <with-param name=""LOG_FILE"" value=""LOG_FILE""/> 
+    <with-param name=""ROTATE_SIZE"" value=""ROTATE_SIZE""/> 
+    <with-param name=""RETENTION_PERIOD"" value=""RETENTION_PERIOD""/> 
+</call-template>"
+18,reportGenerate,"Rapor oluşturma işlemi","REPORT_TYPE, REPORT_DATA","<call-template target=""conf:templates/sequences/reportGenerateTemplate.xml""> 
+    <with-param name=""REPORT_TYPE"" value=""REPORT_TYPE""/> 
+    <with-param name=""REPORT_DATA"" value=""REPORT_DATA""/> 
+</call-template>"
+19,smsSend,"SMS gönderimi","PHONE_NUMBER, SMS_CONTENT","<call-template target=""conf:templates/sequences/smsSendTemplate.xml""> 
+    <with-param name=""PHONE_NUMBER"" value=""PHONE_NUMBER""/> 
+    <with-param name=""SMS_CONTENT"" value=""SMS_CONTENT""/> 
+</call-template>"
+20,fileUpload,"Dosya yükleme işlemi","FILE_PATH, UPLOAD_DESTINATION","<call-template target=""conf:templates/sequences/fileUploadTemplate.xml""> 
+    <with-param name=""FILE_PATH"" value=""FILE_PATH""/> 
+    <with-param name=""UPLOAD_DESTINATION"" value=""UPLOAD_DESTINATION""/> 
+</call-template>"
+21,serviceStatus,"Servis durumu kontrolü","SERVICE_NAME_VALUE, STATUS","<call-template target=""conf:templates/sequences/serviceStatusTemplate.xml""> 
+    <with-param name=""SERVICE_NAME"" value=""SERVICE_NAME_VALUE""/>
+    <with-param name=""STATUS"" value=""STATUS""/> 
+</call-template>"
+22,switch,"switch case","expression,val1,val2","switch(expression) {
   case val1:
     break;
   case val2:
