@@ -27,76 +27,76 @@ index,name,description,parameters,code
 5,forloop,"for döngüsü","index,count","for (int index = 0; index < count; index++) {
   System.out.println(index);
 }"
-6,errorHandler,"Hata yönetimi loglama","ERROR_CODE_VALUE, ERROR_MESSAGE_VALUE","<call-template target=""conf:templates/sequences/errorHandlerTemplate.xml""> 
-    <with-param name=""ERROR_CODE"" value=""ERROR_CODE_VALUE""/> 
-    <with-param name=""ERROR_MESSAGE"" value=""ERROR_MESSAGE_VALUE""/> 
+6,errorHandler,"Hata yönetimi loglama","ERROR_CODE_VALUE, ERROR_MESSAGE_VALUE","<call-template target=""conf:templates/sequences/errorHandlerTemplate.xml"">
+    <with-param name=""ERROR_CODE"" value=""ERROR_CODE_VALUE""/>
+    <with-param name=""ERROR_MESSAGE"" value=""ERROR_MESSAGE_VALUE""/>
 </call-template>"
-7,authToken,"Harici sistem için token çağrısı","PROVIDER_VALUE, REQUESTOR_VALUE, OPER_NAME_VALUE, AUTHENTICATE_TYPE_VALUE, UUSER_VALUE","<call-template target=""conf:templates/sequences/authTokenTemplate.xml""> 
-    <with-param name=""PROVIDER"" value=""PROVIDER_VALUE""/> 
-    <with-param name=""REQUESTOR"" value=""REQUESTOR_VALUE""/> 
-    <with-param name=""OPER_NAME"" value=""OPER_NAME_VALUE""/> 
-    <with-param name=""AUTHENTICATE_TYPE"" value=""AUTHENTICATE_TYPE_VALUE""/> 
-    <with-param name=""UUSER_VALUE"" value=""UUSER""/> 
+7,authToken,"Harici sistem için token çağrısı","PROVIDER_VALUE, REQUESTOR_VALUE, OPER_NAME_VALUE, AUTHENTICATE_TYPE_VALUE, UUSER_VALUE","<call-template target=""conf:templates/sequences/authTokenTemplate.xml"">
+    <with-param name=""PROVIDER"" value=""PROVIDER_VALUE""/>
+    <with-param name=""REQUESTOR"" value=""REQUESTOR_VALUE""/>
+    <with-param name=""OPER_NAME"" value=""OPER_NAME_VALUE""/>
+    <with-param name=""AUTHENTICATE_TYPE"" value=""AUTHENTICATE_TYPE_VALUE""/>
+    <with-param name=""UUSER"" value=""UUSER_VALUE""/>
 </call-template>"
-8,retryLogic,"Çağrı tekrar deneme mekanizması","RETRY_COUNT_VALUE, BACKOFF_VALUE","<call-template target=""conf:templates/sequences/retryLogicTemplate.xml""> 
-    <with-param name=""RETRY_COUNT"" value=""RETRY_COUNT_VALUE""/> 
-    <with-param name=""BACKOFF"" value=""BACKOFF_VALUE""/> 
+8,retryLogic,"Çağrı tekrar deneme mekanizması","RETRY_COUNT_VALUE, BACKOFF_VALUE","<call-template target=""conf:templates/sequences/retryLogicTemplate.xml"">
+    <with-param name=""RETRY_COUNT"" value=""RETRY_COUNT_VALUE""/>
+    <with-param name=""BACKOFF"" value=""BACKOFF_VALUE""/>
 </call-template>"
-9,auditLog,"Denetim loglama işlemi","AUDIT_TYPE_VALUE, MESSAGE_VALUE","<call-template target=""conf:templates/sequences/auditLogTemplate.xml""> 
-    <with-param name=""AUDIT_TYPE"" value=""AUDIT_TYPE_VALUE""/> 
-    <with-param name=""MESSAGE"" value=""MESSAGE_VALUE""/> 
+9,auditLog,"Denetim loglama işlemi","AUDIT_TYPE_VALUE, MESSAGE_VALUE","<call-template target=""conf:templates/sequences/auditLogTemplate.xml"">
+    <with-param name=""AUDIT_TYPE"" value=""AUDIT_TYPE_VALUE""/>
+    <with-param name=""MESSAGE"" value=""MESSAGE_VALUE""/>
 </call-template>"
-10,validate,"Veri doğrulama işlemi","INPUT_SCHEMA, DATA","<call-template target=""conf:templates/sequences/validateTemplate.xml""> 
-    <with-param name=""INPUT_SCHEMA"" value=""INPUT_SCHEMA""/> 
-    <with-param name=""DATA"" value=""DATA""/> 
+10,validate,"Veri doğrulama işlemi","INPUT_SCHEMA, DATA","<call-template target=""conf:templates/sequences/validateTemplate.xml"">
+    <with-param name=""INPUT_SCHEMA"" value=""INPUT_SCHEMA""/>
+    <with-param name=""DATA"" value=""DATA""/>
 </call-template>"
-11,apiCall,"API çağrısı yönetimi","API_NAME_VALUE, REQUEST_PAYLOAD_VALUE, RESPONSE_PAYLOAD_VALUE","<call-template target=""conf:templates/sequences/apiCallTemplate.xml""> 
-    <with-param name=""API_NAME"" value=""API_NAME_VALUE""/> 
-    <with-param name=""REQUEST_PAYLOAD"" value=""REQUEST_PAYLOAD_VALUE""/> 
-    <with-param name=""RESPONSE_PAYLOAD"" value=""RESPONSE_PAYLOAD_VALUE""/> 
+11,apiCall,"API çağrısı yönetimi","API_NAME_VALUE, REQUEST_PAYLOAD_VALUE, RESPONSE_PAYLOAD_VALUE","<call-template target=""conf:templates/sequences/apiCallTemplate.xml"">
+    <with-param name=""API_NAME"" value=""API_NAME_VALUE""/>
+    <with-param name=""REQUEST_PAYLOAD"" value=""REQUEST_PAYLOAD_VALUE""/>
+    <with-param name=""RESPONSE_PAYLOAD"" value=""RESPONSE_PAYLOAD_VALUE""/>
 </call-template>"
-12,dbTransaction,"Veritabanı işlemi yönetimi","TRANSACTION_ID_VALUE, ACTION_TYPE_VALUE","<call-template target=""conf:templates/sequences/dbTransactionTemplate.xml""> 
-    <with-param name=""TRANSACTION_ID"" value=""TRANSACTION_ID_VALUE""/> 
-    <with-param name=""ACTION_TYPE"" value=""ACTION_TYPE_VALUE""/> 
+12,dbTransaction,"Veritabanı işlemi yönetimi","TRANSACTION_ID_VALUE, ACTION_TYPE_VALUE","<call-template target=""conf:templates/sequences/dbTransactionTemplate.xml"">
+    <with-param name=""TRANSACTION_ID"" value=""TRANSACTION_ID_VALUE""/>
+    <with-param name=""ACTION_TYPE"" value=""ACTION_TYPE_VALUE""/>
 </call-template>"
-13,dataCache,"Veri önbelleği yönetimi","CACHE_KEY_VALUE, CACHE_TTL_VALUE","<call-template target=""conf:templates/sequences/dataCacheTemplate.xml""> 
-    <with-param name=""CACHE_KEY"" value=""CACHE_KEY_VALUE""/> 
-    <with-param name=""CACHE_TTL"" value=""CACHE_TTL_VALUE""/> 
+13,dataCache,"Veri önbelleği yönetimi","CACHE_KEY_VALUE, CACHE_TTL_VALUE","<call-template target=""conf:templates/sequences/dataCacheTemplate.xml"">
+    <with-param name=""CACHE_KEY"" value=""CACHE_KEY_VALUE""/>
+    <with-param name=""CACHE_TTL"" value=""CACHE_TTL_VALUE""/>
 </call-template>"
-14,userAuth,"Kullanıcı kimlik doğrulama","USER_ID_VALUE, PASSWORD_VALUE, ROLE_VALUE","<call-template target=""conf:templates/sequences/userAuthTemplate.xml""> 
-    <with-param name=""USER_ID"" value=""USER_ID_VALUE""/> 
-    <with-param name=""PASSWORD"" value=""PASSWORD_VALUE""/> 
-    <with-param name=""ROLE"" value=""ROLE_VALUE""/> 
+14,userAuth,"Kullanıcı kimlik doğrulama","USER_ID_VALUE, PASSWORD_VALUE, ROLE_VALUE","<call-template target=""conf:templates/sequences/userAuthTemplate.xml"">
+    <with-param name=""USER_ID"" value=""USER_ID_VALUE""/>
+    <with-param name=""PASSWORD"" value=""PASSWORD_VALUE""/>
+    <with-param name=""ROLE"" value=""ROLE_VALUE""/>
 </call-template>"
-15,emailSend,"E-posta gönderimi","EMAIL_TO_VALUE, EMAIL_SUBJECT_VALUE, EMAIL_BODY_VALUE","<call-template target=""conf:templates/sequences/emailSendTemplate.xml""> 
-    <with-param name=""EMAIL_TO"" value=""EMAIL_TO_VALUE""/> 
-    <with-param name=""EMAIL_SUBJECT"" value=""EMAIL_SUBJECT_VALUE""/> 
-    <with-param name=""EMAIL_BODY"" value=""EMAIL_BODY_VALUE""/> 
+15,emailSend,"E-posta gönderimi","EMAIL_TO_VALUE, EMAIL_SUBJECT_VALUE, EMAIL_BODY_VALUE","<call-template target=""conf:templates/sequences/emailSendTemplate.xml"">
+    <with-param name=""EMAIL_TO"" value=""EMAIL_TO_VALUE""/>
+    <with-param name=""EMAIL_SUBJECT"" value=""EMAIL_SUBJECT_VALUE""/>
+    <with-param name=""EMAIL_BODY"" value=""EMAIL_BODY_VALUE""/>
 </call-template>"
-16,dataExport,"Veri dışa aktarım işlemi","EXPORT_FORMAT_VALUE, EXPORT_PATH_VALUE","<call-template target=""conf:templates/sequences/dataExportTemplate.xml""> 
-    <with-param name=""EXPORT_FORMAT"" value=""EXPORT_FORMAT_VALUE""/> 
-    <with-param name=""EXPORT_PATH"" value=""EXPORT_PATH_VALUE""/> 
+16,dataExport,"Veri dışa aktarım işlemi","EXPORT_FORMAT_VALUE, EXPORT_PATH_VALUE","<call-template target=""conf:templates/sequences/dataExportTemplate.xml"">
+    <with-param name=""EXPORT_FORMAT"" value=""EXPORT_FORMAT_VALUE""/>
+    <with-param name=""EXPORT_PATH"" value=""EXPORT_PATH_VALUE""/>
 </call-template>"
-17,logRotate,"Log döngüsü yönetimi","LOG_FILE_VALUE, ROTATE_SIZE_VALUE, RETENTION_PERIOD_VALUE","<call-template target=""conf:templates/sequences/logRotateTemplate.xml""> 
-    <with-param name=""LOG_FILE"" value=""LOG_FILE_VALUE""/> 
-    <with-param name=""ROTATE_SIZE"" value=""ROTATE_SIZE_VALUE""/> 
-    <with-param name=""RETENTION_PERIOD"" value=""RETENTION_PERIOD_VALUE""/> 
+17,logRotate,"Log döngüsü yönetimi","LOG_FILE_VALUE, ROTATE_SIZE_VALUE, RETENTION_PERIOD_VALUE","<call-template target=""conf:templates/sequences/logRotateTemplate.xml"">
+    <with-param name=""LOG_FILE"" value=""LOG_FILE_VALUE""/>
+    <with-param name=""ROTATE_SIZE"" value=""ROTATE_SIZE_VALUE""/>
+    <with-param name=""RETENTION_PERIOD"" value=""RETENTION_PERIOD_VALUE""/>
 </call-template>"
-18,reportGenerate,"Rapor oluşturma işlemi","REPORT_TYPE_VALUE, REPORT_DATA_VALUE","<call-template target=""conf:templates/sequences/reportGenerateTemplate.xml""> 
-    <with-param name=""REPORT_TYPE"" value=""REPORT_TYPE_VALUE""/> 
-    <with-param name=""REPORT_DATA"" value=""REPORT_DATA_VALUE""/> 
+18,reportGenerate,"Rapor oluşturma işlemi","REPORT_TYPE_VALUE, REPORT_DATA_VALUE","<call-template target=""conf:templates/sequences/reportGenerateTemplate.xml"">
+    <with-param name=""REPORT_TYPE"" value=""REPORT_TYPE_VALUE""/>
+    <with-param name=""REPORT_DATA"" value=""REPORT_DATA_VALUE""/>
 </call-template>"
-19,smsSend,"SMS gönderimi","PHONE_NUMBER_VALUE, SMS_CONTENT_VALUE","<call-template target=""conf:templates/sequences/smsSendTemplate.xml""> 
-    <with-param name=""PHONE_NUMBER"" value=""PHONE_NUMBER_VALUE""/> 
-    <with-param name=""SMS_CONTENT"" value=""SMS_CONTENT_VALUE""/> 
+19,smsSend,"SMS gönderimi","PHONE_NUMBER_VALUE, SMS_CONTENT_VALUE","<call-template target=""conf:templates/sequences/smsSendTemplate.xml"">
+    <with-param name=""PHONE_NUMBER"" value=""PHONE_NUMBER_VALUE""/>
+    <with-param name=""SMS_CONTENT"" value=""SMS_CONTENT_VALUE""/>
 </call-template>"
-20,fileUpload,"Dosya yükleme işlemi","FILE_PATH_VALUE, UPLOAD_DESTINATION_VALUE","<call-template target=""conf:templates/sequences/fileUploadTemplate.xml""> 
-    <with-param name=""FILE_PATH"" value=""FILE_PATH_VALUE""/> 
-    <with-param name=""UPLOAD_DESTINATION"" value=""UPLOAD_DESTINATION_VALUE""/> 
+20,fileUpload,"Dosya yükleme işlemi","FILE_PATH_VALUE, UPLOAD_DESTINATION_VALUE","<call-template target=""conf:templates/sequences/fileUploadTemplate.xml"">
+    <with-param name=""FILE_PATH"" value=""FILE_PATH_VALUE""/>
+    <with-param name=""UPLOAD_DESTINATION"" value=""UPLOAD_DESTINATION_VALUE""/>
 </call-template>"
-21,serviceStatus,"Servis durumu kontrolü","SERVICE_NAME_VALUE, STATUS_VALUE","<call-template target=""conf:templates/sequences/serviceStatusTemplate.xml""> 
+21,serviceStatus,"Servis durumu kontrolü","SERVICE_NAME_VALUE, STATUS_VALUE","<call-template target=""conf:templates/sequences/serviceStatusTemplate.xml"">
     <with-param name=""SERVICE_NAME"" value=""SERVICE_NAME_VALUE""/>
-    <with-param name=""STATUS"" value=""STATUS_VALUE""/> 
+    <with-param name=""STATUS"" value=""STATUS_VALUE""/>
 </call-template>"
 22,switch,"switch case","expression,val1,val2","switch(expression) {
   case val1:
@@ -105,3 +105,10 @@ index,name,description,parameters,code
     break;
   default:
 }"
+23,ecaToken,"ECA için kimlik doğrulama tokeni","PROVIDER_VALUE, REQUESTOR_VALUE, OPER_NAME_VALUE, AUTHENTICATE_TYPE_VALUE, UUSER_VALUE","<call-template target=""conf:templates/sequences/ecaTokenTemplate.xml"">
+    <with-param name=""PROVIDER"" value=""PROVIDER_VALUE""/> <with-param name=""REQUESTOR"" value=""PROVIDER_VALUE""/>
+    <with-param name=""OPER_NAME"" value=""OPER_NAME_VALUE""/>
+    <with-param name=""AUTHENTICATE_TYPE"" value=""AUTHENTICATE_TYPE_VALUE""/>
+    <with-param name=""UUSER"" value=""UUSER_VALUE""/>
+</call-template>"
+
