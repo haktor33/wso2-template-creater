@@ -46,9 +46,9 @@ index,name,description,parameters,code
     <with-param name=""AUDIT_TYPE"" value=""AUDIT_TYPE_VALUE""/>
     <with-param name=""MESSAGE"" value=""MESSAGE_VALUE""/>
 </call-template>"
-10,validate,"Veri doğrulama işlemi","INPUT_SCHEMA,DATA","<call-template target=""conf:templates/sequences/validateTemplate.xml"">
-    <with-param name=""INPUT_SCHEMA"" value=""INPUT_SCHEMA""/>
-    <with-param name=""DATA"" value=""DATA""/>
+10,validate,"Veri doğrulama işlemi","INPUT_SCHEMA_VALUE,DATA_VALUE","<call-template target=""conf:templates/sequences/validateTemplate.xml"">
+    <with-param name=""INPUT_SCHEMA"" value=""INPUT_SCHEMA_VALUE""/>
+    <with-param name=""DATA"" value=""DATA_VALUE""/>
 </call-template>"
 11,apiCall,"API çağrısı yönetimi","API_NAME_VALUE,REQUEST_PAYLOAD_VALUE,RESPONSE_PAYLOAD_VALUE","<call-template target=""conf:templates/sequences/apiCallTemplate.xml"">
     <with-param name=""API_NAME"" value=""API_NAME_VALUE""/>
@@ -112,4 +112,3 @@ index,name,description,parameters,code
     <with-param name=""AUTHENTICATE_TYPE"" value=""AUTHENTICATE_TYPE_VALUE""/>
     <with-param name=""UUSER"" value=""UUSER_VALUE""/>
 </call-template>"
-
